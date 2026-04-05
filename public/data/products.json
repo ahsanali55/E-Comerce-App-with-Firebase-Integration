@@ -1,0 +1,150 @@
+[
+  {
+  "id": 1,
+  "name": "Apple AirPods",
+  "category": "Audio",
+  "brand": "Apple",
+  "price": 129.99,
+  "basePrice": 129.99,
+  "orgPrice": 519.96,
+  "stock": 60,
+  "description": "Apple AirPods with high-quality audio, seamless Bluetooth pairing, and long-lasting battery life.",
+  "image": "airpods.png",
+  "quantity": 1,
+  "addToCart": false,
+  "isStockFull": false
+},
+  {
+    "id": 2,
+    "name": "Laptop",
+    "category": "Computers",
+    "brand": "ExampleBrand",
+    "price": 999.99,
+    "basePrice": 999.99,
+    "orgPrice": 3999.96,
+    "stock": 50,
+    "description": "Powerful laptop with a quad-core i5 processor, 8GB RAM, 256GB SSD, and a 14-inch FHD display.",
+    "image": "lapi.png",
+    "quantity": 1,
+    "addToCart": false,
+    "isStockFull": false
+  },
+  {
+    "id": 3,
+    "name": "Smartphone",
+    "category": "Mobiles",
+    "brand": "TechGadget",
+    "price": 499.99,
+    "basePrice": 499.99,
+    "orgPrice": 1999.96,
+    
+    "stock": 100,
+    "description": "Feature-rich smartphone with a 6.2-inch screen, 12MP dual camera, 128GB storage, and a 4000mAh battery.",
+    "image": "iphone.png",
+    "quantity": 1,
+        "addToCart": false,
+    "isStockFull": false
+
+  },
+  {
+    "id": 4,
+    "name": "Wireless Headphones",
+    "category": "Audio",
+    "brand": "SoundBeats",
+    "price": 149.99,
+    "basePrice": 149.99,
+    "orgPrice": 599.96,
+    
+    "stock": 30,
+    "description": "High-quality wireless headphones with over-ear design, 20 hours of battery life, and a sleek black color.",
+    "image": "headphone.png",
+    "quantity": 1,
+        "addToCart": false,
+    "isStockFull": false
+
+
+  },
+  {
+    "id": 5,
+    "name": "Watches",
+    "category": "Wearables",
+    "brand": "FitTech",
+    "price": 199.99,
+    "basePrice": 199.99,
+    "orgPrice": 799.96,
+    
+    "stock": 20,
+    "description": "Smartwatch with a 1.3-inch AMOLED display, water-resistant design, fitness tracking features, and a stylish silver color.",
+    "image": "watch.png",
+    "quantity": 1,
+        "addToCart": false,
+    "isStockFull": false
+
+  },
+  {
+  "id": 6,
+  "name": "Drone Camera",
+  "category": "Gadgets",
+  "brand": "SkyFly",
+  "price": 299.99,
+  "basePrice": 299.99,
+  "orgPrice": 1199.96,
+  "stock": 15,
+  "description": "High-performance drone with 4K camera, auto-stabilization, and 30-min flight time.",
+  "image": "drone.png",
+  "quantity": 1,
+  "addToCart": false,
+  "isStockFull": false
+},
+  {
+    "id": 7,
+    "name": "Speakers",
+    "category": "Audio",
+    "brand": "SoundBeats",
+    "price": 149.99,
+    "basePrice": 149.99,
+    "orgPrice": 599.96,
+    
+    "stock": 30,
+    "description": "High-quality wireless headphones with over-ear design, 20 hours of battery life, and a sleek black color.",
+    "image": "speakers.png",
+    "quantity": 1,
+        "addToCart": false,
+    "isStockFull": false
+
+    
+  },
+  {
+    "id": 8,
+    "name": "Television",
+    "category": "Video",
+    "brand": "Samsung",
+    "price": 199.99,
+    "basePrice": 199.99,
+    "orgPrice": 799.96,
+    
+    "stock": 20,
+    "description": "Smartwatch with a 1.3-inch AMOLED display, water-resistant design, fitness tracking features, and a stylish silver color.",
+    "image": "tv.png",
+    "quantity": 1,
+        "addToCart": false,
+    "isStockFull": false
+
+  },
+  {
+  "id": 9,
+  "name": "Gaming Keyboard",
+  "category": "Accessories",
+  "brand": "KeyPro",
+  "price": 89.99,
+  "basePrice": 89.99,
+  "orgPrice": 359.96,
+  "stock": 40,
+  "description": "Mechanical RGB gaming keyboard with blue switches and aluminum frame.",
+  "image": "keyboard.jpg",
+  "quantity": 1,
+  "addToCart": false,
+  "isStockFull": false
+}
+
+]
