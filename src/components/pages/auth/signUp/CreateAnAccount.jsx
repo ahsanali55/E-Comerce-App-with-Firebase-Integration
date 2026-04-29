@@ -1,4 +1,3 @@
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import React, { useRef, useState } from "react";
 import { FaCheck, FaEye, FaEyeSlash } from "react-icons/fa";
 import { auth } from "../../../../utils/firebaseConfig";
@@ -19,28 +18,7 @@ const CreateAnAccount = ({setOpen}) => {
   const password = useRef();
 
   // Create Account Here
-  const handleCreateAccount = async (formData) => {
-    console.log("Data inside handleCreateAccount function, ", formData)
-    dispatch(CreateAccActions.createAnAccountStart()); // loading start
 
-    try {
-      const cred = await createUserWithEmailAndPassword(
-        auth,
-        formData.email,
-        formData.password,
-      );
-
-      await updateProfile(cred.user, {
-        displayName: formData.name,
-      });
-
-      dispatch(CreateAccActions.createAnAccountSuccess()); // Created
-      dispatch(CreateAccActions.afterNavigation()); // false for next creation otherwise back to home 
-    } catch (err) {
-      console.log(err.message);
-      dispatch(CreateAccActions.createAnAccountFail()); // loading stop
-    }
-  };
   
   useEffect(() => {
     if (isCreated === true) {
@@ -50,20 +28,7 @@ const CreateAnAccount = ({setOpen}) => {
     return () => {};
   }, [isCreated]);
 
-  const handleSignUp = (event) => {
-    event.preventDefault();
-    setOpen(true)
-    console.log(
-      name.current.value,
-      email.current.value,
-      password.current.value,
-    );
-    handleCreateAccount(
-      {name: name.current.value,
-      email: email.current.value,
-      password: password.current.value,}
-    );
-  };
+
 
   return (
     <form

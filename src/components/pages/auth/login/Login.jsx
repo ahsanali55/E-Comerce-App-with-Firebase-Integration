@@ -19,21 +19,7 @@ const Login = () => {
 
   const handleClose = () => setOpen(false);
 
-  const handleLogin = async (event) => {
-    event.preventDefault();
-    setOpen(true);
-    try {
-      await signInWithEmailAndPassword(
-        auth,
-        email.current.value,
-        password.current.value,
-      );
-      // alert("You have Successfully Logged In Now.");
-      navigate("/");
-    } catch (err) {
-      setError("Invalid credentials");
-    }
-  };
+  
 
   return (
     <>

@@ -37,7 +37,7 @@ const RightNav = () => {
   }, [dispatch]);
 
   const handleLogout = async() => {
-    await signOut(auth)
+  
   }
 
   

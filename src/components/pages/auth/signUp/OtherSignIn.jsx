@@ -1,34 +1,12 @@
 import React from "react";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { GoogleAuthProvider, FacebookAuthProvider, signInWithPopup } from "firebase/auth";
+
 import { auth } from "../../../../utils/firebaseConfig";
 import { useNavigate } from "react-router-dom";
 
-// => login with Facebook Code
-const facebookProvider = new FacebookAuthProvider();
-// facebookProvider.addScope("email"); // requesting email
-const handleFacebookLogin = async () => {
-  try {
-    await signInWithPopup(auth, facebookProvider);
-      navigate("/"); // navigate to home page
-  } catch (error) {
-    console.error(error);
-  }
-};
-// => login with Google Code
-const googleProvider = new GoogleAuthProvider();
-const navigate = useNavigate();
-const handleGoogleLogin = async () => {
-  try {
-    await signInWithPopup(auth, googleProvider);
-    // 🔥 No dispatch here
-    // onAuthStateChanged will handle Redux
-    navigate("/"); // navigate to home page
-  } catch (error) {
-    console.error(error);
-  }
-};
+=
+
 
 const OtherSignIn = () => {
   return (
