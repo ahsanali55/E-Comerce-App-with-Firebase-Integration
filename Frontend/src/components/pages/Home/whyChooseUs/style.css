@@ -1,0 +1,35 @@
+
+.animate{
+    animation: moveClockWise 25s  linear infinite;
+}
+
+@keyframes moveClockWise {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes color-change-after-2s {
+  0% {
+    background-color: #98bdf5; /* starting color */
+  }
+  50%, 66% {
+    background-color: #7aaaf3; /* stay same for 2 seconds (2s out of 3s total) */
+  }
+  75% {
+    background-color: #618dec; /* final color */
+  }
+  100% {
+    background-color: #98bdf5; /* final color */
+  }
+}
+
+.color-change-delay {
+  animation: color-change-after-2s 5s linear infinite;
+  
+}
+svg {
+  aspect-ratio: 1 / 1;
+}
