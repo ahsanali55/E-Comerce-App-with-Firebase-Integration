@@ -21,7 +21,7 @@ const ProductApiFetch = () => {
       } catch (err) {
         console.log("Error:", err);
       } finally {
-        console.log("Finally, response a gya");
+        // console.log("Finally, response a gya");
       }
     };
 

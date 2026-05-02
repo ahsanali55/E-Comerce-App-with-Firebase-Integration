@@ -27,7 +27,7 @@ const SignUp = () => {
             </div>
           </Link>
 
-          <div className="bg-white rounded-3xl max-w-[500px] h-[600px] w-10/12 shadow-2xl">
+          <div className="bg-white rounded-3xl max-w-[500px]  w-10/12 shadow-2xl">
             <h1 className="text-center mt-7 font-semibold text-2xl">
               Create An Account?
             </h1>

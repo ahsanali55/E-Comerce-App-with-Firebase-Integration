@@ -8,7 +8,7 @@ const OtherSignIn = () => {
   const handleFacebookLogin = () => {};
 
   return (
-    <div className="text-center space-y-4 mt-3">
+    <div className="text-center space-y-4 my-3">
       <h3 className="text-gray-400">Or Sign in with</h3>
       <div className="flex items-center justify-center gap-2 ">
         <div

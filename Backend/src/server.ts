@@ -2,7 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
-import authRouter from "./routes/authRouter";
+import authRouter from "./routes/authRoutes";
+
 
 
 dotenv.config();
@@ -19,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 // Handling routes
-app.use("/api/auth",authRouter);
+app.use("/api/auth", authRouter);
 
 
 // MonogoDB Connection
