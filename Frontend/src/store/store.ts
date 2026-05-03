@@ -7,10 +7,12 @@ import saleReducer from './SaleSlice'
 import productReducer from './ProductSlice'
 import whyChooseReducer from './WhyChooseSlice'
 import footerReducer from './footerSlice'
+import authReducer from "./authSlice";
 
 
 export const store = configureStore({
     reducer: {
+        auth: authReducer,
         navbar: navbarReducer,
         cart: cartReducer,
         profile: profileReducer,
@@ -19,6 +21,7 @@ export const store = configureStore({
         product: productReducer,
         whyChoose: whyChooseReducer,
         footer: footerReducer,
+
     }
 })
 

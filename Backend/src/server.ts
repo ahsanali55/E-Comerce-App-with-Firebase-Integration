@@ -21,6 +21,7 @@ app.get('/', (req, res) => {
 
 // Handling routes
 app.use("/api/auth", authRouter);
+app.use("/api/user", authRouter);
 
 
 // MonogoDB Connection

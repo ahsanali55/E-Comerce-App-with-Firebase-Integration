@@ -1,16 +1,18 @@
 import React, { useEffect, useRef } from "react";
 import { FaCartArrowDown } from "react-icons/fa6";
-import { useDispatch, useSelector } from "react-redux";
+
 import { Link } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { ProfileActions } from "../../../../store/profileSlice";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/hook";
+import { logout } from "../../../../store/authSlice";
 
 const RightNav = () => {
-  const cart = useSelector((state: RootState) => state.cart);
-  const isDropDown = useSelector((state: RootState) => state.profile.isDropDown);
-  const dispatch = useDispatch();
-  const user = localStorage.getItem("user");
+  const { cart } = useAppSelector((state: RootState) => state);
+  const isDropDown = useAppSelector((state: RootState) => state.profile.isDropDown);
+  const dispatch = useAppDispatch();
+  const user = localStorage.getItem("token");
 
   const handleDropDown = (e) => {
     e.stopPropagation();
@@ -35,7 +37,8 @@ const RightNav = () => {
   }, [dispatch]);
 
   const handleLogout = async () => {
-    localStorage.removeItem("user");
+    dispatch(logout())
+    localStorage.removeItem("token");
   }
 
   

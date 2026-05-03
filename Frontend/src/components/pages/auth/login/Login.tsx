@@ -4,7 +4,7 @@ import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { ChevronLeft, Eye, EyeOff } from "lucide-react";
+import { ChevronLeft, Eye, EyeOff, User } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
@@ -19,6 +19,8 @@ import {
   FormMessage,
 } from "../../../ui/form";
 import { Input } from "../../../ui/input";
+import { useAppDispatch } from "../../../../hooks/hook";
+import { setCredentials } from "../../../../store/authSlice";
 
 const loginSchema = z.object({
   email: z.string().trim().email("Enter a valid email address."),
@@ -32,6 +34,7 @@ const Login = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [serverError, setServerError] = useState<string>("");
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
@@ -46,14 +49,23 @@ const Login = () => {
   const handleLogin = async (values: LoginFormValues) => {
     setServerError("");
     setOpen(true);
+try {
+    // 1️⃣ Login
+    const res = await API.post("/auth/login", values);
 
-    try {
-      const response = await API.post("/auth/login", values);
+    const token = res.data.token;
 
-      if (response.data?.token) {
-        localStorage.setItem("token", response.data.token);
-      }
+    // 2️⃣ Store token
+    localStorage.setItem("token", token);
 
+    // 3️⃣ Fetch user immediately 🔥
+    const profileRes = await API.get("/user/profile");
+
+     // 4️⃣ Store user + token in Redux
+     dispatch(setCredentials({
+      user: profileRes.data.user,
+      token,
+     }))
       navigate("/profile");
     } catch (error) {
       const message = axios.isAxiosError(error)

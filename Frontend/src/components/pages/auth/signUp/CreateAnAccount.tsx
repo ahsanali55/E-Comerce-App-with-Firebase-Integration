@@ -68,7 +68,7 @@ const CreateAnAccount = ({ setOpen }: CreateAnAccountProps) => {
         email: values.email,
         password: values.password,
       });
-
+      
       navigate("/signIn");
     } catch (error) {
       const message = axios.isAxiosError(error)

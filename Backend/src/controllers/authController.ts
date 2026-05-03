@@ -1,7 +1,8 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import User from "../models/User";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { AuthRequest } from "../middleware/authMiddleware";
 
 // Generate Jwt Token for every new user
 const generateToken = (id: string) => {
@@ -29,7 +30,7 @@ export const registerUser = async (req: Request, res: Response) => {
     const hashedPassward = await bcrypt.hash(password, 10);
 
     //  Create the user
-    const user = await User.create({ firstName, lastName, email, password });
+    const user = await User.create({ firstName, lastName, email, password: hashedPassward });
     res.status(201).json({
       _id: user._id,
       email: user.email,
@@ -76,4 +77,11 @@ export const loginUser = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Server error while login user" });
   }
 
+}
+
+export const profile = (req: AuthRequest, res: Response, next: NextFunction) => {
+  res.json({
+    message: "login successfull",
+    user: req.user,
+  })
 }
